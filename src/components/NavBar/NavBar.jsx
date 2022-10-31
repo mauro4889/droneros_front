@@ -7,7 +7,7 @@ import { NavLink } from 'react-router-dom'
 
 const variants = {
     open: { opacity: 1, top: "4em", },
-    close: { top: 0 }
+    close: { top: 0, height: 0 }
 }
 
 

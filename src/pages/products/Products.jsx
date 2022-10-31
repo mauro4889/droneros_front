@@ -1,26 +1,44 @@
 import { faFilter, faXmark } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import React from 'react'
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { CardProduct } from '../../components/CardProduct/CardProduct'
 import { ContainerFilter, ContainerProducts, FilterContainer, ProductsContainerStyle } from './ProductsStyle'
 import portada from '../../assets/img/products/portada.jpg'
 
+
+
 const variants = {
     open: { left: 0},
-    close: {left: '-10em'}
+    close: {left: '-15em'}
 }
 
 
 export const Products = () => {
     const [isOpen, setOpen] = useState(false)
+    const btnCloseRef = useRef()
+    const btnOpenRef = useRef()
+
+    useEffect(()=>{
+        const closeMenu = e =>{
+            
+            if (e.path[0] !== btnCloseRef.current && e.path[0] !== btnOpenRef.current){
+                setOpen(false)
+                console.log(e)
+            }
+        }
+
+        document.body.addEventListener('click', closeMenu)
+
+        return ()=> document.body.removeEventListener('click', closeMenu)
+    }, [])
+
 
     return (
         <ProductsContainerStyle>
             <img src={portada} alt="Portada" className='portada' />
             <h2>Nuestros Productos</h2>
             <ContainerFilter>
-                <button onClick={()=> setOpen(true)}>Filtrar<FontAwesomeIcon icon={faFilter} className='icon' /></button>
+                <button ref={btnOpenRef} onClick={()=> setOpen(true)}>Filtrar<FontAwesomeIcon icon={faFilter}/></button>
                 <form>
                     <label>Ordenar por</label>
                     <select name="" id="">
@@ -34,7 +52,7 @@ export const Products = () => {
             <FilterContainer
                 animate={isOpen ? "open" : "close"}
                 variants={variants}>
-            <FontAwesomeIcon icon={faXmark} className='iconClose' onClick={()=>setOpen(false)} />
+            <button ref={btnCloseRef} onClick={()=>setOpen(false)} ><FontAwesomeIcon icon={faXmark} className='iconClose'/></button>
                 <ul>
                     <li>Fotogafria</li>
                     <li>FPV</li>

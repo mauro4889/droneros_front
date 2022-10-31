@@ -80,7 +80,6 @@ export const NavMenuStyle = styled(motion.div)`
             height: 100%;
             margin: 0;
             justify-content: space-around;
-            padding-top: 5%;
         }
         li{
             margin: 0;

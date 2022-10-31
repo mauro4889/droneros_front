@@ -29,6 +29,16 @@ export const ContainerStyle = styled.div`
         border: none;
         padding: 3%;
         border-radius: 5px;
+        cursor: pointer;
+        &:hover{
+            background-color: #fff;
+            border: solid 1px #FF0081;
+            color: #FF0081;
+        }
+        @media (min-width: 1023px){
+            font-size: 15px;
+            font-weight: bold;
+        }
     }
     @media (min-width: 767px){
         img{

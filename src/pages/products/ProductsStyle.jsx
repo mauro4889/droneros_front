@@ -9,15 +9,36 @@ export const ProductsContainerStyle = styled.div`
         height: 10em;
         background-attachment: fixed;
         background-position: center;
+        @media (min-width: 767px){
+            height: 15em;
+        }
+        @media (min-width: 1023px){
+            height: 20em;
+        }
+        @media (min-width: 1300px){
+            height: 25em;
+        }
     }
     h2{
         position: absolute;
+        width: 100%;
         top: 8em;
-        left: 1.2em;
         color: #000;
         font-family: 'Open Sans';
         letter-spacing: 2px;
         text-transform: uppercase;
+        text-align: center;
+        @media (min-width: 767px){
+            font-size: 35px;
+            top: 7.5em;
+        }
+        @media (min-width: 1023px){
+            top: 9em;
+        }
+        @media (min-width: 1300px){
+            top: 12em;
+            letter-spacing: 5px;
+        }
     }
 `
 export const ContainerFilter = styled.div`
@@ -25,11 +46,22 @@ export const ContainerFilter = styled.div`
     width: 90vw;
     justify-content: space-around;
     margin-top: 5%;
+    @media (min-width: 767px){
+        width: 90vw;
+        margin: 2em auto;
+    }
     button{
         border: none;
         background-color: #fff;
         width: 6em;
+        font-family: 'Open Sans';
+        letter-spacing: 1.5px;
         cursor: pointer;
+        @media (min-width: 1023px){
+            font-size: 20px;
+            font-weight: 500;
+
+        }
     }
     .icon{
         margin-left: 1.5em;
@@ -40,9 +72,15 @@ export const ContainerFilter = styled.div`
     }
     label{
         margin-right: 2%;
+        @media (min-width: 1023px){
+            font-size: 20px;
+        }
     }
     select{
         border: none;
+        @media (min-width: 1023px){
+            font-size: 18px;
+        }
     }
 `
 
@@ -50,9 +88,14 @@ export const FilterContainer = styled(motion.div)`
     height: 100%;
     background-color: #f8f6f6;
     position: absolute;
-    top: 5em;
-    left: -10em;
+    top: 15em;
     padding-right: 5%;
+    @media (min-width: 767px){
+        top: 20em;
+    }
+    @media (min-width: 1023px){
+        top: 25em;
+    }
     ul{
         height: 100%;
         margin-left: 1.5em;
@@ -73,10 +116,15 @@ export const FilterContainer = styled(motion.div)`
         margin-left: 6em;
         cursor: pointer;
     }
+    button{
+        border: none;
+        background-color: #F8F6F6;
+    }
 `
 
 export const ContainerProducts = styled.div`
     width: 100vw;
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-around;
 `
