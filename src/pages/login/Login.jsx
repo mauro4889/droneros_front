@@ -1,6 +1,9 @@
 import React from 'react'
-import { FormStyle, LoginContainer } from './LoginStyle'
+import { ContainerAnimated, FormStyle, LoginContainer } from './LoginStyle'
 import google from '../../assets/img/logos/google.png'
+import user from '../../assets/img/login/user.png'
+import drone from '../../assets/img/login/drone.png'
+import { motion } from "framer-motion";
 
 export const Login = () => {
     return (
@@ -17,7 +20,16 @@ export const Login = () => {
                     <button><img src={google} alt="Google" /></button>
                 </div>
             </FormStyle>
-
+            <ContainerAnimated>
+                <motion.div className="drone_container"
+                animate={{y:[-10,10,-10]}}
+                transition={{repeat: Infinity, duration: 2}}>
+                    <img src={drone} alt="Drone" />
+                </motion.div>
+                <div className="user_container">
+                    <img src={user} alt="User" />
+                </div>
+            </ContainerAnimated>
         </LoginContainer>
     )
 }

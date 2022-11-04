@@ -8,6 +8,9 @@ export const LoginContainer = styled.div`
     h2{
         text-align: center;
         margin-top: 1em;
+        font-family: 'Open Sans';
+        letter-spacing: 2px;
+        font-size: 30px;
     }
 `
 
@@ -31,10 +34,11 @@ export const FormStyle = styled.form`
         margin-top: 2em;
     }
     @media (min-width: 1023px){
-        width: 50%;
+        width: 30%;
+        margin-left: 40em;
     }
     @media (min-width: 1300px){
-        width: 40%;
+        
     }
     label{
         font-family: 'Open Sans';
@@ -86,5 +90,22 @@ export const FormStyle = styled.form`
         img{
             width: 50%;
         }
+    }
+`
+
+export const ContainerAnimated = styled.div`
+    position: absolute;
+    .drone_container{
+        img{
+            margin-top: 2em;
+        }
+    }
+    .user_container{
+        img{
+            margin-left: 10em;
+        }
+    }
+    @media (max-width: 769px){
+        visibility: hidden;
     }
 `
