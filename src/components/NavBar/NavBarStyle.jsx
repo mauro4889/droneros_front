@@ -88,10 +88,7 @@ export const NavMenuStyle = styled(motion.div)`
     }
     @media (min-width: 1439px){
         ul{
-            padding-top: 3%;
+            padding-top: 0%;
         }
-    @media (min-width: 1360px){
-        padding-top: 0;
-    }
     }
 `

@@ -21,7 +21,7 @@ export const SliderStyle = styled.div`
 
 export const SlideStyle = styled.div`
     display: inline-block;
-    height: 220px;
+    height: 100%;
     width: 100%;
     background-size: cover;
     background-repeat: no-repeat;

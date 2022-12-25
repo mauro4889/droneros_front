@@ -91,6 +91,15 @@ export const FormStyle = styled.form`
             width: 50%;
         }
     }
+    .register{
+        a{
+            text-decoration: none;
+            color: #FF0081;
+            :visited{
+                color: #FF0081;
+            }
+        }
+    }
 `
 
 export const ContainerAnimated = styled.div`

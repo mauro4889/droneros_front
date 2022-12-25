@@ -8,6 +8,13 @@ export const CreateAcountContainer = styled.div`
         text-align: center;
         margin-top: 2em;
     }
+    @media ( min-width: 1339px){
+        width: 50%;
+        margin: auto;
+        h3{
+            font-size: 30px;
+        }
+    }
 `
 
 export const FormStyle = styled.form`

@@ -4,6 +4,7 @@ import google from '../../assets/img/logos/google.png'
 import user from '../../assets/img/login/user.png'
 import drone from '../../assets/img/login/drone.png'
 import { motion } from "framer-motion";
+import { NavLink } from 'react-router-dom'
 
 export const Login = () => {
     return (
@@ -18,6 +19,9 @@ export const Login = () => {
                 <p>O puedes ingresar con...</p>
                 <div className="alternate_login">
                     <button><img src={google} alt="Google" /></button>
+                </div>
+                <div className='register'>
+                    <p>¿No tienes usuario? <NavLink className={'link'} to='/createacount'>Registrarse</NavLink></p>
                 </div>
             </FormStyle>
             <ContainerAnimated>
