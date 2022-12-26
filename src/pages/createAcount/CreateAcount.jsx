@@ -13,16 +13,15 @@ export const CreateAcount = () => {
         if(password !== isPassword){
             return alert('No coincide la contraseña')
         }
-        console.log(values)
+        
         try {
             const newUser = await createUser(email, password, firstname, lastname)
-
             return newUser
         } catch (error) {
             console.log(error)
             return error
         }
-
+        
         reset()
     }
 

@@ -16,7 +16,7 @@ export const createUser = async(firstname, lastname, email, password) => {
     }
 }
 
-export const login = async(email, password) => {
+export const loginUser = async(email, password) => {
     try {
         const response = await axios.post('http://localhost:3001/auth/login', {
             email,

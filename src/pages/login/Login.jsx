@@ -5,16 +5,38 @@ import user from '../../assets/img/login/user.png'
 import drone from '../../assets/img/login/drone.png'
 import { motion } from "framer-motion";
 import { NavLink } from 'react-router-dom'
+import { useForm } from 'react-hook-form'
+import { loginUser } from '../../axios/users'
 
 export const Login = () => {
+    const {reset, register, handleSubmit} = useForm()
+
+    const onSubmit = async (values) => {
+        const {email, password} = values
+        
+        try {
+            const loged = await loginUser(email, password)
+            console.log(loged)
+            return loged
+        } catch (error) {
+            console.log(error)
+            return error
+        }
+
+        reset()
+    }
+
+
     return (
         <LoginContainer>
             <h2>Ingresa a tu cuenta</h2>
-            <FormStyle>
+            <FormStyle onSubmit={handleSubmit(onSubmit)} >
                 <label>Usuario</label>
-                <input type="text" />
+                <input type="text" {...register('email', {required: true})} />
+
                 <label>Contraseña</label>
-                <input type="password" />
+                <input type="password" {...register('password', {required: true})} />
+
                 <button type='submit'>Ingresar</button>
                 <p>O puedes ingresar con...</p>
                 <div className="alternate_login">
