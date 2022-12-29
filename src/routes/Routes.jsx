@@ -1,4 +1,5 @@
 import { Routes as ReactDomRoutes, Route } from 'react-router-dom'
+import { AddProduct } from '../pages/addProduct/AddProduct'
 import { CreateAcount } from '../pages/createAcount/CreateAcount'
 import { ErrorPage } from '../pages/errorPage/ErrorPage'
 import { Index } from '../pages/index/Index'
@@ -14,6 +15,7 @@ export const Routes = () => {
             <Route path='login' element={<Login/>}/>
             <Route path='createacount' element={<CreateAcount/>}/>
             <Route path='*' element={<ErrorPage/>}/>
+            <Route path='admin/addproduct' element={<AddProduct/>}/>
         </ReactDomRoutes>
     )
 }
