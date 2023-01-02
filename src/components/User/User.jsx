@@ -19,8 +19,6 @@ export const User = () => {
     const [isOpen, setOpen] = useState(false)
     const { firstname } = JSON.parse(localStorage.getItem('user'))
     const navigate = useNavigate()
-    console.log(firstname)
-    console.log(isOpen)
 
     const logOut = () => {
         localStorage.setItem('user', JSON.stringify(''))

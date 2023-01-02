@@ -1,4 +1,5 @@
-import { Routes as ReactDomRoutes, Route } from 'react-router-dom'
+import { useSelector } from 'react-redux'
+import { Routes as ReactDomRoutes, Route, Navigate } from 'react-router-dom'
 import { ProfileUpdate } from '../components/ProfileUpdate/ProfileUpdate'
 import { SearchProducts } from '../components/SearchProducts/SearchProducts'
 import { UpdateProduct } from '../components/UpdateProduct/UpdateProduct'
@@ -14,20 +15,22 @@ import { Profile } from '../pages/profile/Profile'
 
 
 export const Routes = () => {
+    const user = useSelector((state) => state.isLogin)
+    console.log(user)
     return (
         <ReactDomRoutes>
-            <Route path='/' element={<Index/>}/>
-            <Route path='products' element={<Products/>}/>
-            <Route path='login' element={<Login/>}/>
-            <Route path='createacount' element={<CreateAcount/>}/>
-            <Route path='*' element={<ErrorPage/>}/>
-            <Route path='admin/panel' element={<AdminPanel/>}/>
-            <Route path='admin/panel/addproduct' element={<AddProduct/>}/>
-            <Route path='admin/panel/listproducts' element={<ListProducts/>}/>
-            <Route path='admin/panel/listproducts/update' element={<UpdateProduct/>} />
-            <Route path='admin/panel/searchproducts' element={<SearchProducts/>}/>
-            <Route path='profile' element={<Profile/>}/>
-            <Route path='profile/update' element={<ProfileUpdate/>}/>
+            <Route path='/' element={<Index />} />
+            <Route path='products' element={<Products />} />
+            <Route path='login' element={ user ? (<Navigate to="/"/>) : <Login />} />
+            <Route path='createacount' element={ user ? (<Navigate to="/"/>) : <CreateAcount />} />
+            <Route path='*' element={<ErrorPage />} />
+            <Route path='admin/panel' element={ user ? <AdminPanel /> : (<Navigate to="/login"/>)} />
+            <Route path='admin/panel/addproduct' element={ user ? <AddProduct /> : (<Navigate to="/login"/>)} />
+            <Route path='admin/panel/listproducts' element={ user ? <ListProducts /> : (<Navigate to="/login"/>)} />
+            <Route path='admin/panel/listproducts/update' element={ user ? <UpdateProduct /> : (<Navigate to="/login"/>)} />
+            <Route path='admin/panel/searchproducts' element={ user ? <SearchProducts /> : (<Navigate to="/login"/>)} />
+            <Route path='profile' element={user ? <Profile /> : (<Navigate to="/login"/>)} />
+            <Route path='profile/update' element={ user ? <ProfileUpdate /> : (<Navigate to="/login"/>)} />
         </ReactDomRoutes>
     )
 }

@@ -26,10 +26,7 @@ export const NavBar = () => {
     useEffect(()=>{
         const data = JSON.parse(localStorage.getItem('user'))
         setIsUser(data)
-        console.log(data)
     }, [localStorage])
-
-    console.log(isUser)
 
     return (
         <NavStyle>

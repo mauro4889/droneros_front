@@ -55,6 +55,13 @@ export const NavMenuStyle = styled(motion.div)`
     ul{
         margin-left: 5%;
         margin-top: 4em;
+        a{
+            text-decoration: none;
+            color: #fff;
+            :visited{
+                color: #fff;
+            }
+        }
     }
     li{
         list-style: none;
@@ -62,12 +69,7 @@ export const NavMenuStyle = styled(motion.div)`
         font-weight: 300;
         letter-spacing: 5px;
     }
-    .links{
-        text-decoration: none;
-        &:visited{
-            color: #fff;
-        }
-    }
+    
     @media (min-width: 767px){
         position: static;
         width: 75%;
