@@ -39,6 +39,9 @@ export const ContainerStyle = styled.div`
             font-size: 15px;
             font-weight: bold;
         }
+        @media (min-width: 1439px){
+            padding: 1.5%;
+        }
     }
     @media (min-width: 767px){
         img{
@@ -53,6 +56,18 @@ export const ContainerStyle = styled.div`
         img{
             height: 22em;
             width: 60%;
+        }
+        .price{
+            font-size: 15px;
+        }
+    }
+    @media (min-width: 1439px){
+        height: 34em;
+        img{
+            width: 40%;
+        }
+        .price{
+            font-size: 20px;
         }
     }
 `

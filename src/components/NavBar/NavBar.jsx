@@ -2,21 +2,34 @@ import { LogoStyle, NavButtonStyle, NavMenuStyle, NavStyle } from './NavBarStyle
 import logo2 from '../../assets/img/logo2.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
+import { User } from '../User/User'
+
 
 const variants = {
     open: { opacity: 1, 
         top: "4em", 
-        height: "20em"},
-    close: { top: 0,
-        height: 0 }
+        height: "20em",
+        visibility: "visible"},
+    close: { top: "-100px",
+        height: 0,
+    }
 }
 
 
 
 export const NavBar = () => {
     const [isOpen, setOpen] = useState(false)
+    const [isUser, setIsUser] = useState('')
+    
+    useEffect(()=>{
+        const data = JSON.parse(localStorage.getItem('user'))
+        setIsUser(data)
+        console.log(data)
+    }, [localStorage])
+
+    console.log(isUser)
 
     return (
         <NavStyle>
@@ -37,7 +50,14 @@ export const NavBar = () => {
                     <NavLink to='/' className='links'><li>Inicio</li></NavLink>
                     <NavLink to='products' className='links'><li>Productos</li></NavLink>
                     <li>Nosotros</li>
-                    <NavLink to='login' className='links'><li>Ingresar</li></NavLink>
+                    <li>
+                        {
+                            isUser ? 
+                            <User/> 
+                            : 
+                            <NavLink to='login' className='links'>Iniciar Sesión</NavLink>
+                        }
+                    </li>
                 </ul>
             </NavMenuStyle>
         </NavStyle>

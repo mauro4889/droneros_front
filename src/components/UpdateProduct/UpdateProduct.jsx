@@ -1,13 +1,12 @@
 import React from 'react'
-import { NavLink, useNavigate } from 'react-router-dom'
-import { AddProductContainer, AddProductForm, ContainerButton } from './AddProductStyle'
+import { NavLink } from 'react-router-dom'
+import { ContainerButton, UpdateProductContainer, UpdateProductForm } from './UpdateProductStyle'
 
-export const AddProduct = () => {
-  const navigate = useNavigate()
+export const UpdateProduct = () => {
   return (
-    <AddProductContainer>
+    <UpdateProductContainer>
         <h2>AGREGA UN PRODUCTO NUEVO</h2>
-        <AddProductForm>
+        <UpdateProductForm>
             <label>Nombre</label>
             <input type="text" />
 
@@ -22,9 +21,9 @@ export const AddProduct = () => {
 
             <ContainerButton>
             <button className='accept'>ACEPTAR</button>
-            <NavLink to='/admin/panel' ><button className='cancel'>CANCELAR</button></NavLink>
+            <NavLink to='/admin/panel/listproducts' ><button className='cancel'>CANCELAR</button></NavLink>
             </ContainerButton>
-        </AddProductForm>
-    </AddProductContainer>
+        </UpdateProductForm>
+    </UpdateProductContainer>
   )
 }

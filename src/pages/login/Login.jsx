@@ -4,19 +4,23 @@ import google from '../../assets/img/logos/google.png'
 import user from '../../assets/img/login/user.png'
 import drone from '../../assets/img/login/drone.png'
 import { motion } from "framer-motion";
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import { loginUser } from '../../axios/users'
 
 export const Login = () => {
     const {reset, register, handleSubmit} = useForm()
+    const navigate = useNavigate()
 
     const onSubmit = async (values) => {
         const {email, password} = values
         
         try {
             const loged = await loginUser(email, password)
-            console.log(loged)
+            localStorage.removeItem('token')
+            localStorage.setItem('token', JSON.stringify(loged.data.token))
+            localStorage.setItem('user', JSON.stringify(loged.data.data))
+            navigate('/')
             return loged
         } catch (error) {
             console.log(error)
