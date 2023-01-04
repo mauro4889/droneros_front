@@ -2,18 +2,30 @@ import { faPencil, faTrash } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import { deleteProduct } from '../../axios/products'
 import { DetailProductContainer } from './DetailProductStyle'
 
-export const DetailProduct = () => {
+export const DetailProduct = ({id, name, description, price, stock, category}) => {
+
+    const deleted = async(id) => {
+        try {
+            return await deleteProduct(id)
+        } catch (error) {
+            console.log(error)
+            return error
+        }
+    }
+
     return (
         <DetailProductContainer>
-            <p className="id">1</p>
-            <p>Drone FPV</p>
-            <p>Para mayor placer</p>
-            <p>8000</p>
+            <p className="category">{category.categoryName}</p>
+            <p> {name} </p>
+            <p> {description} </p>
+            <p>$ {price} </p>
+            <p> {stock} </p>
             <form action="">
-                <NavLink to='update' ><button><FontAwesomeIcon icon={faPencil} /></button></NavLink>
-                <button><FontAwesomeIcon icon={faTrash} /></button>
+                <NavLink to='/admin/panel/updateproduct' ><button><FontAwesomeIcon icon={faPencil} /></button></NavLink>
+                <button onClick={() => deleted(id)} ><FontAwesomeIcon icon={faTrash} /></button>
             </form>
         </DetailProductContainer>
     )

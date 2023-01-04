@@ -5,7 +5,7 @@ export const DetailProductContainer = styled.div`
     width: 100%;
     margin: 2% auto;
     display: grid;
-    grid-template-columns: 1fr 3fr 3fr 3fr 2fr;
+    grid-template-columns: 1fr 2fr 2fr 2fr 2fr 2fr;
     p{
         padding: auto;
         @media (min-width: 767px){

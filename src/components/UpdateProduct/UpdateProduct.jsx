@@ -27,7 +27,7 @@ export const UpdateProduct = () => {
 
   return (
     <UpdateProductContainer>
-      <h2>AGREGA UN PRODUCTO NUEVO</h2>
+      <h2>MODIFICAR PRODUCTO</h2>
       <UpdateProductForm onSubmit={handleSubmit(onSubmit)} >
         <label>Nombre</label>
         <input type="text" {...register('productName')} onChange={(e) => setIsEmpty(e.target)} />
@@ -43,7 +43,7 @@ export const UpdateProduct = () => {
 
         <ContainerButton>
           <button className='accept'>ACEPTAR</button>
-          <NavLink to='/admin/panel/listproducts' ><button className='cancel'>CANCELAR</button></NavLink>
+          <NavLink to='/admin/panel' ><button className='cancel'>CANCELAR</button></NavLink>
         </ContainerButton>
       </UpdateProductForm>
     </UpdateProductContainer>

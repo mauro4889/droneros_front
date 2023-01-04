@@ -7,10 +7,14 @@ import { motion } from "framer-motion";
 import { NavLink, useNavigate } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import { loginUser } from '../../axios/users'
+import { useDispatch, useSelector } from 'react-redux'
+import { login } from '../../redux/userReducer'
 
 export const Login = () => {
     const {reset, register, handleSubmit} = useForm()
     const navigate = useNavigate()
+    const data = useSelector((state) => state.isLogin)
+    const dispatch = useDispatch()
 
     const onSubmit = async (values) => {
         const {email, password} = values
@@ -20,6 +24,8 @@ export const Login = () => {
             localStorage.removeItem('token')
             localStorage.setItem('token', JSON.stringify(loged.data.token))
             localStorage.setItem('user', JSON.stringify(loged.data.data))
+            dispatch(login())
+            window.location.reload()
             navigate('/')
             return loged
         } catch (error) {

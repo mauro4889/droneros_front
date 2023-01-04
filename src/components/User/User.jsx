@@ -22,6 +22,7 @@ export const User = () => {
 
     const logOut = () => {
         localStorage.setItem('user', JSON.stringify(''))
+        window.location.reload()
     }
 
 

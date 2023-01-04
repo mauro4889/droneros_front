@@ -23,6 +23,9 @@ export const AddProductForm = styled.form`
     input{
         margin-bottom: 4%;
     }
+    select{
+        margin-bottom: 4%;
+    }
     @media (min-width: 767px){
         width: 60%;
     }

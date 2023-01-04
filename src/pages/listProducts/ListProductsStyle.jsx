@@ -23,7 +23,7 @@ export const ContainerProductsDetail = styled.div`
         width: 100%;
         margin: auto;
         display: grid;
-        grid-template-columns: 1fr 3fr 3fr 3fr 2fr;
+        grid-template-columns: 1fr 2fr 2fr 2fr 2fr 2fr;
         font-weight: bold;
         margin-top: 5%;
     }

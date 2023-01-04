@@ -23,7 +23,6 @@ export const Products = () => {
             
             if (e.path[0] !== btnCloseRef.current && e.path[0] !== btnOpenRef.current){
                 setOpen(false)
-                console.log(e)
             }
         }
 

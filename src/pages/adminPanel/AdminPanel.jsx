@@ -11,6 +11,7 @@ export const AdminPanel = () => {
                 <NavLink to='listproducts' ><button>Listar productos</button></NavLink>
                 <NavLink to='searchproducts' ><button>Buscar producto</button></NavLink>
                 <NavLink to='addproduct' ><button>Agregar producto</button></NavLink>
+                <NavLink to='updateproduct' ><button>Modificar producto</button></NavLink>
             </div>
         </AdminPanelContainer>
     )
