@@ -24,7 +24,7 @@ export const DetailProduct = ({id, name, description, price, stock, category}) =
             <p>$ {price} </p>
             <p> {stock} </p>
             <form action="">
-                <NavLink to='/admin/panel/updateproduct' ><button><FontAwesomeIcon icon={faPencil} /></button></NavLink>
+                <NavLink to='/admin/panel/updateproduct' state={{ productId: id }} ><button><FontAwesomeIcon icon={faPencil} /></button></NavLink>
                 <button onClick={() => deleted(id)} ><FontAwesomeIcon icon={faTrash} /></button>
             </form>
         </DetailProductContainer>

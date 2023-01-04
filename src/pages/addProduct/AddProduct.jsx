@@ -23,11 +23,19 @@ export const AddProduct = () => {
   }
 
   const onSubmit = async (values) => {
-    const {name, description, price, stock, categoryId, image} = values
-    console.log(values)
+    const {name, description, price, stock, category, image} = values
+    
+    if(!category){
+      throw alert('Error en la categoria')
+    }
 
     try {
-      await addProduct(name, description, price, stock, image, categoryId)
+      const created = await addProduct(name, description, price, stock, image, category)
+
+      if(created.code === 'ERR_BAD_REQUEST'){
+        throw alert('Error al crear producto')
+      }
+
       reset()
       return alert('Producto creado satisfactoriamente')
     } catch (error) {
@@ -52,13 +60,14 @@ export const AddProduct = () => {
         <input type="text" {...register('description', { required: true })} />
 
         <label>Precio</label>
-        <input type="number" {...register('price', { required: true })} />
+        <input type="number" {...register('price', { required: true, valueAsNumber: true })} />
 
         <label>Stock</label>
-        <input type="stock" {...register('stock', { required: true })} />
+        <input type="stock" {...register('stock', { required: true, valueAsNumber: true })} />
 
         <label>Categoria</label>
-        <select {...register('category')} {...isCategory} >
+        <select  {...register('category', { required: true, valueAsNumber: true })} {...isCategory} >
+          <option value="" selected>---</option>
         {isCategory?.map(e => (
             <option key={e.id} value={e.id}>
               {e.categoryName}

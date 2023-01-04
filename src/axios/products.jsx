@@ -3,18 +3,18 @@ import axios from "axios"
 const token = localStorage.getItem('token')
 
 
-export const addProduct = async (productName, description, price, stock, img, category) => {
+export const addProduct = async (name, description, price, stock, img, categoryId) => {
     try {
         const response = await axios({
             method: 'post',
             url: 'http://localhost:3001/products/',
             data: {
-                productName,
+                name,
                 description,
                 price,
                 stock,
                 img,
-                category,
+                categoryId,
             },
             headers: {
                 authorization: "Bearer " + token?.replace(/['"]+/g, '')
@@ -41,8 +41,10 @@ export const getProductById = async (id) => {
 
 export const updateProduct = async (id, ...data) => {
     try {
-        const response = await axios.patch(`http://localhost:3001/products/${id}`, {
-            ...data,
+        const response = await axios({
+            method: 'patch',
+            url: `http://localhost:3001/products/${id}`,
+            data: data[0],
             headers: {
                 authorization: "Bearer " + token?.replace(/['"]+/g, '')
             }
