@@ -6,6 +6,7 @@ import { AddCategory } from '../components/AddCategory/AddCategory'
 import { ListCategory } from '../components/ListCategory/ListCategory'
 import { ProfileUpdate } from '../components/ProfileUpdate/ProfileUpdate'
 import { SearchProducts } from '../components/SearchProducts/SearchProducts'
+import { UpdateCategory } from '../components/UpdateCategory/UpdateCategory'
 import { UpdateProduct } from '../components/UpdateProduct/UpdateProduct'
 import { AddProduct } from '../pages/addProduct/AddProduct'
 import { AdminPanel } from '../pages/adminPanel/AdminPanel'
@@ -45,6 +46,7 @@ export const Routes = () => {
             <Route path='admin/panel/category' element={isLoged ? <Category /> : (<Navigate to="/login" />)}/>
             <Route path='admin/panel/category/add' element={isLoged ? <AddCategory /> : (<Navigate to="/login" />)}/>
             <Route path='admin/panel/category/list' element={isLoged ? <ListCategory /> : (<Navigate to="/login" />)}/>
+            <Route path='admin/panel/category/update' element={isLoged ? <UpdateCategory /> : (<Navigate to="/login" />)}/>
             <Route path='profile' element={isLoged ? <Profile /> : (<Navigate to="/login" />)} />
             <Route path='profile/update' element={isLoged ? <ProfileUpdate /> : (<Navigate to="/login" />)} />
         </ReactDomRoutes>

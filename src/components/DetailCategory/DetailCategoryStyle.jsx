@@ -8,7 +8,7 @@ export const DetailCategoryContainer = styled.div`
     grid-template-columns: 2fr 10fr 2fr;
     border-bottom: 1px solid #000;
     padding-bottom: 1%;
-    form{
+    div{
         display: flex;
         justify-content: space-between;
         @media (min-width: 1023px){

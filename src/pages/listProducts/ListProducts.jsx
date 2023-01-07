@@ -20,8 +20,6 @@ export const ListProducts = () => {
         }
     }
 
-    console.log(isProducts)
-
     useEffect(()=>{
         products()
     }, [])

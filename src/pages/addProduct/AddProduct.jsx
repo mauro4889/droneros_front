@@ -1,3 +1,4 @@
+import { AdvancedImage } from '@cloudinary/react'
 import React from 'react'
 import { useEffect } from 'react'
 import { useState } from 'react'
@@ -6,6 +7,10 @@ import { NavLink, useNavigate } from 'react-router-dom'
 import { getAllCategory } from '../../axios/category'
 import { addProduct } from '../../axios/products'
 import { AddProductContainer, AddProductForm, ContainerButton } from './AddProductStyle'
+import {fill} from "@cloudinary/url-gen/actions/resize";
+import {CloudinaryImage} from '@cloudinary/url-gen';
+
+const myImage = new CloudinaryImage('sample', {cloudName: 'dxgkdm6jw'}).resize(fill().width(100).height(150));
 
 export const AddProduct = () => {
   const { reset, register, handleSubmit } = useForm()
@@ -77,6 +82,7 @@ export const AddProduct = () => {
 
         <label>Imagen</label>
         <input type="text" placeholder='URL' {...register('image', { required: true })} />
+        <AdvancedImage cldImg={myImage} />
 
         <ContainerButton>
           <button className='accept'>ACEPTAR</button>

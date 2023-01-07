@@ -7,6 +7,14 @@ export const ListCategoryContainer = styled.div`
         text-align: center;
         margin-top: 4%;
     }
+    .backButton{
+        margin: 2% auto;
+        margin-left: 2%;
+        border: none;
+        background-color: #fff;
+        font-size: 15px;
+        cursor: pointer;        
+    }
     .categoryAction{
         width: 90%;
         margin: auto;

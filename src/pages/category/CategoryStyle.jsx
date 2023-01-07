@@ -7,6 +7,14 @@ export const CategoryContainer = styled.div`
         text-align: center;
         margin-top: 5%;
     }
+    .backButton{
+        margin: 2% auto;
+        margin-left: 2%;
+        border: none;
+        background-color: #fff;
+        font-size: 15px;
+        cursor: pointer;        
+    }
     .containerButtons{
         display: flex;
         flex-direction: column;
@@ -21,6 +29,7 @@ export const CategoryContainer = styled.div`
             font-weight: bold;
             font-size: 15px;
             border-radius: 5px;
+            cursor: pointer;
         }
     }
 `

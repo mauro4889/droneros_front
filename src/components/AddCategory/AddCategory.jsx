@@ -13,7 +13,14 @@ export const AddCategory = () => {
         const {name} = values
         const categoryName = name.toUpperCase()
         try {
-            await addCategory(categoryName)
+            const response = await addCategory(categoryName)
+            
+            if(response.data.success){
+                alert('CATEGORIA CREADA')
+            }else{
+                alert('ERROR AL CREAR LA CATEGORIA')
+            }
+
             reset()
         } catch (error) {
             console.log(error)
