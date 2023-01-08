@@ -5,6 +5,7 @@ import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { useState, useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
 import { User } from '../User/User'
+import { Cart } from '../Cart/Cart'
 
 
 const variants = {
@@ -57,6 +58,7 @@ export const NavBar = () => {
                     </li>
                 </ul>
             </NavMenuStyle>
+            <Cart/>
         </NavStyle>
     )
 }

@@ -90,3 +90,16 @@ export const getAllProducts = async () => {
         return error
     }
 }
+
+export const getProductForCategory = async (id) =>{
+    
+    try {
+        const response = await axios({
+            method: 'get',
+            url: `http://localhost:3002/products/filter/${id}`,
+        })
+        return response.data.data.products
+    } catch (error) {
+        
+    }
+}

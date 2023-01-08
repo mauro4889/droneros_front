@@ -5,7 +5,7 @@ import { CardProduct } from '../../components/CardProduct/CardProduct'
 import { ContainerFilter, ContainerProducts, FilterContainer, ProductsContainerStyle } from './ProductsStyle'
 import portada from '../../assets/img/products/portada.jpg'
 import { getAllCategory } from '../../axios/category'
-import { getAllProducts } from '../../axios/products'
+import { getAllProducts, getProductForCategory } from '../../axios/products'
 
 
 
@@ -42,18 +42,18 @@ export const Products = () => {
         }
     }
 
-    useEffect(() => {
-        const closeMenu = e => {
-
-            if (e.path[0] !== btnCloseRef.current && e.path[0] !== btnOpenRef.current) {
-                setOpen(false)
-            }
+    const getProductByCategory = async (id) => {
+        if(!id){
+            getProducts()
         }
-
-        document.body.addEventListener('click', closeMenu)
-
-        return () => document.body.removeEventListener('click', closeMenu)
-    }, [])
+        try {
+            const data = await getProductForCategory(id)
+            setIsProducts(data)
+        } catch (error) {
+            console.log(error)
+            return error
+        }
+    }
 
     useEffect(() => {
         getCategoty()
@@ -75,7 +75,7 @@ export const Products = () => {
                         <option value="Viejo">Menos nuevo</option>
                     </select>
                 </form>
-                <select>
+                <select onChange={(e)=> getProductByCategory(e.target.value)} >
                     <option value="" selected>---</option>
                     {isCategory?.map(e => (
                         <option key={e.id} value={e.id}>

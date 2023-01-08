@@ -6,24 +6,20 @@ export const NavStyle = styled.div`
     background-color: rgb(34, 34, 34);
     width: 100vw;
     height: 5em;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 2fr 9fr 1fr;
     position: sticky;
 `
 
 export const LogoStyle = styled.div`
-    width: 25%;
-    height: 95%;
+    width: 100%;
+    height: 100%;
     img{
-        width: 100%;
-        height: 100%;
-    }
-    @media (min-width: 767px){
-        width: 15%;
-    }
-    @media (min-width: 1023px){
-        width: 10%;
+        width: 60%;
+        height: 50%;
+        @media (min-width: 1023px){
+            height: 55%;
+        }
     }
 `
 export const NavButtonStyle = styled.div`
@@ -48,10 +44,10 @@ export const NavMenuStyle = styled(motion.div)`
     opacity: 0;
     position: absolute;
     color: #fff;
-    width: 100vw;
     height: 60vh;
     background-color: rgba(34, 34, 34, .5);
     z-index: -100;
+    padding-top: 2em;
     ul{
         margin-left: 5%;
         margin-top: 4em;
@@ -72,7 +68,6 @@ export const NavMenuStyle = styled(motion.div)`
     
     @media (min-width: 767px){
         position: static;
-        width: 75%;
         height: 100%;
         z-index: 10;
         opacity: 1 !important;
