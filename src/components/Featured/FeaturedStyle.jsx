@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 
-export const ContainerOfferStyle = styled.div`
+export const ContainerFeaturedStyle = styled.div`
     width: 100vw;
     display: flex;
     flex-direction: column;
