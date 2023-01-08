@@ -6,7 +6,7 @@ export const addCategory = async (categoryName) =>{
     try {
         const created = await axios({
             method: 'post',
-            url: 'http://localhost:3001/category',
+            url: 'http://localhost:3002/category',
             data:{
                 categoryName
             },
@@ -25,7 +25,7 @@ export const getAllCategory = async() => {
     try {
         const response = await axios({
             method: 'get',
-            url: 'http://localhost:3001/category',
+            url: 'http://localhost:3002/category',
             headers: {
                 authorization: "Bearer " + token?.replace(/['"]+/g, '')
             }
@@ -42,7 +42,7 @@ export const updateCategory = async (id, categoryName) => {
     try {
         const response = await axios({
             method: 'patch',
-            url: `http://localhost:3001/category/${id}`,
+            url: `http://localhost:3002/category/${id}`,
             data: categoryName,
             headers: {
                 authorization: "Bearer " + token?.replace(/['"]+/g, '')
@@ -61,7 +61,7 @@ export const deleteCategory = async (id) =>{
     try {
         const response = await axios({
             method: 'delete',
-            url: `http://localhost:3001/category/${id}`,
+            url: `http://localhost:3002/category/${id}`,
             headers: {
                 authorization: "Bearer " + token?.replace(/['"]+/g, '')
             }

@@ -1,7 +1,4 @@
-import { AdvancedImage } from '@cloudinary/react'
-import React from 'react'
-import { useEffect } from 'react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import { NavLink, useNavigate } from 'react-router-dom'
 import { getAllCategory } from '../../axios/category'
@@ -82,7 +79,6 @@ export const AddProduct = () => {
 
         <label>Imagen</label>
         <input type="text" placeholder='URL' {...register('image', { required: true })} />
-        <AdvancedImage cldImg={myImage} />
 
         <ContainerButton>
           <button className='accept'>ACEPTAR</button>

@@ -7,7 +7,7 @@ export const addProduct = async (name, description, price, stock, img, categoryI
     try {
         const response = await axios({
             method: 'post',
-            url: 'http://localhost:3001/products/',
+            url: 'http://localhost:3002/products/',
             data: {
                 name,
                 description,
@@ -30,7 +30,7 @@ export const addProduct = async (name, description, price, stock, img, categoryI
 
 export const getProductById = async (id) => {
     try {
-        const response = await axios.get(`http://localhost:3001/products/${id}`)
+        const response = await axios.get(`http://localhost:3002/products/${id}`)
 
         return response
     } catch (error) {
@@ -43,7 +43,7 @@ export const updateProduct = async (id, ...data) => {
     try {
         const response = await axios({
             method: 'patch',
-            url: `http://localhost:3001/products/${id}`,
+            url: `http://localhost:3002/products/${id}`,
             data: data[0],
             headers: {
                 authorization: "Bearer " + token?.replace(/['"]+/g, '')
@@ -61,7 +61,7 @@ export const deleteProduct = async (id) => {
     try {
         const response = await axios({
             method: 'delete',
-            url: `http://localhost:3001/products/${id}`,
+            url: `http://localhost:3002/products/${id}`,
             headers: {
                 authorization: "Bearer " + token?.replace(/['"]+/g, '')
             }
@@ -78,7 +78,7 @@ export const getAllProducts = async () => {
     try {
         const response = await axios({
             method: 'get',
-            url: 'http://localhost:3001/products',
+            url: 'http://localhost:3002/products',
             headers: {
                 authorization: "Bearer " + token?.replace(/['"]+/g, '')
             }

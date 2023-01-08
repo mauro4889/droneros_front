@@ -2,13 +2,20 @@ import React from 'react'
 import { ContainerStyle } from './CardStyle'
 import DJI_fpv from '../../assets/img/products/DJI_fpv.jpg'
 
-export const CardProduct = () => {
+export const CardProduct = ({name, description, price, img}) => {
+    console.log(name, description, price, img)
     return (
         <ContainerStyle>
-            <img src={DJI_fpv} alt="DJI FPV" />
-            <h3>DJI FPV Fly More Combo</h3>
-            <p>Tu imaginacion a mas de 130km/h</p>
-            <p className='price'>$499.99</p>
+            <img src={img} alt={name} />
+            <h3>
+                {name}
+            </h3>
+            <p>
+                {description}
+            </p>
+            <p className='price'>
+                {price}
+            </p>
             <button>COMPRAR</button>
         </ContainerStyle>
     )

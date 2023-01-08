@@ -2,7 +2,7 @@ import axios from "axios"
 
 export const createUser = async(firstname, lastname, email, password) => {
     try {
-        const response = await axios.post('http://localhost:3001/auth/register', {
+        const response = await axios.post('http://localhost:3002/auth/register', {
             email,
             password,
             firstname,
@@ -18,7 +18,7 @@ export const createUser = async(firstname, lastname, email, password) => {
 
 export const loginUser = async(email, password) => {
     try {
-        const response = await axios.post('http://localhost:3001/auth/login', {
+        const response = await axios.post('http://localhost:3002/auth/login', {
             email,
             password
         })
