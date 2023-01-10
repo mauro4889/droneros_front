@@ -9,6 +9,9 @@ export const NavStyle = styled.div`
     display: grid;
     grid-template-columns: 2fr 9fr 1fr;
     position: sticky;
+    @media (max-width: 767px){
+        grid-template-columns: 3fr 6fr 3fr;
+    }
 `
 
 export const LogoStyle = styled.div`
@@ -19,6 +22,10 @@ export const LogoStyle = styled.div`
         height: 50%;
         @media (min-width: 1023px){
             height: 55%;
+        }
+        @media (max-width: 767px){
+            width: 80%;
+            height: 80%;
         }
     }
 `
@@ -34,6 +41,9 @@ export const NavButtonStyle = styled.div`
         width: 100%;
         height: 100%;
     }
+    @media (max-width: 765px){
+        margin: auto;
+    };
     @media (min-width: 767px){
         display: none;
     }
@@ -64,6 +74,10 @@ export const NavMenuStyle = styled(motion.div)`
         margin: 8% auto;
         font-weight: 300;
         letter-spacing: 5px;
+    }
+
+    @media (max-width: 767px){
+        width: 100vw;
     }
     
     @media (min-width: 767px){

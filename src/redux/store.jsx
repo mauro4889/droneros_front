@@ -4,17 +4,12 @@ import  userReducer  from './userReducer'
 import storage from 'redux-persist/lib/storage';
 import thunk from 'redux-thunk';
 import persistStore from 'redux-persist/es/persistStore';
+import cartReducer from './cartReducer';
 
-const persistConfig = {
-  key: 'root',
-  storage
-}
-
-const persistedReducer = persistReducer(persistConfig, userReducer)
 
 const store = configureStore({
-  reducer: persistedReducer,
-  middleware: [thunk]
+  reducer: {
+    cart: cartReducer
+  }
 })
 export default store
-export const persistor = persistStore(store)

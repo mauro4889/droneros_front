@@ -6,6 +6,7 @@ import { useState, useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
 import { User } from '../User/User'
 import { Cart } from '../Cart/Cart'
+import { useSelector } from 'react-redux'
 
 
 const variants = {
@@ -23,7 +24,8 @@ const variants = {
 export const NavBar = () => {
     const [isOpen, setOpen] = useState(false)
     const [isUser, setIsUser] = useState('')
-    
+    const cart = useSelector((state) => state.cart)
+    console.log(cart)
     useEffect(()=>{
         const data = JSON.parse(localStorage.getItem('user'))
         setIsUser(data)

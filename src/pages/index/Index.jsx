@@ -13,7 +13,6 @@ export const Index = () => {
         <HeroStyle>
             <Slideshow />
             <Payments />
-            <Featured />
             <CategoryCard />
             <InstructiveCard />
             <ContactForm />

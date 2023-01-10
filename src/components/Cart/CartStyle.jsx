@@ -7,7 +7,6 @@ export const CartContainer = styled.div`
         color: #fff;
         background-color: rgba(34, 34, 34, .5);
         border: none;
-        margin-top: -1em;
     }
     .badgeCounter{
         background-color: #FF0081;
@@ -20,5 +19,8 @@ export const CartContainer = styled.div`
         margin-top: 1em;
         margin-left: 1em;
         font-weight: bold;
+        @media (max-width: 767px){
+            height: 25%;
+        }
     }
 `
