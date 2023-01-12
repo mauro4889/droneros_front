@@ -2,11 +2,13 @@ import React from 'react'
 import { ContainerStyle } from './CardStyle'
 import DJI_fpv from '../../assets/img/products/DJI_fpv.jpg'
 import { useDispatch } from 'react-redux'
-import { addProduct } from '../../axios/products'
+import { addProductToCart } from '../../redux/cart/cartActions'
+import { addToCart } from '../../redux/cart/cartReducer'
 
-export const CardProduct = ({name, description, price, img}) => {
+
+export const CardProduct = ({name, description, price, img, id}) => {
     const dispatch = useDispatch()
-    const product =[name, description, price, img]
+    const product =[{id: id, name: name, description: description, price: price, img: img}]
     
     return (
         <ContainerStyle>
@@ -20,7 +22,7 @@ export const CardProduct = ({name, description, price, img}) => {
             <p className='price'>
                 {price}
             </p>
-            <button onClick={()=> dispatch(addProduct(product))} >
+            <button onClick={()=> dispatch(addToCart(...product))} >
                 COMPRAR
             </button>
         </ContainerStyle>

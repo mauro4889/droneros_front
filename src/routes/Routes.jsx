@@ -10,6 +10,7 @@ import { UpdateCategory } from '../components/UpdateCategory/UpdateCategory'
 import { UpdateProduct } from '../components/UpdateProduct/UpdateProduct'
 import { AddProduct } from '../pages/addProduct/AddProduct'
 import { AdminPanel } from '../pages/adminPanel/AdminPanel'
+import { CartResume } from '../pages/cartResume/CartResume'
 import { Category } from '../pages/category/Category'
 import { CreateAcount } from '../pages/createAcount/CreateAcount'
 import { ErrorPage } from '../pages/errorPage/ErrorPage'
@@ -18,6 +19,7 @@ import { ListProducts } from '../pages/listProducts/ListProducts'
 import { Login } from '../pages/login/Login'
 import { Products } from '../pages/products/Products'
 import { Profile } from '../pages/profile/Profile'
+
 
 
 export const Routes = () => {
@@ -49,6 +51,7 @@ export const Routes = () => {
             <Route path='admin/panel/category/update' element={isLoged ? <UpdateCategory /> : (<Navigate to="/login" />)}/>
             <Route path='profile' element={isLoged ? <Profile /> : (<Navigate to="/login" />)} />
             <Route path='profile/update' element={isLoged ? <ProfileUpdate /> : (<Navigate to="/login" />)} />
+            <Route path='cartresume' element={isLoged ? <CartResume/> : (<Navigate to="/login" />) } />
         </ReactDomRoutes>
     )
 }

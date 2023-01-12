@@ -21,11 +21,14 @@ export const SliderStyle = styled.div`
 
 export const SlideStyle = styled.div`
     display: inline-block;
-    height: 100%;
+    height: 220px;
     width: 100%;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    @media (min-width: 767px){
+        background-size: 100% 100%;
+    }
     @media (min-width: 1023px){
         height: 400px;
     }

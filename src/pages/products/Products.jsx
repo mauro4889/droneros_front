@@ -6,22 +6,18 @@ import { ContainerFilter, ContainerProducts, FilterContainer, ProductsContainerS
 import portada from '../../assets/img/products/portada.jpg'
 import { getAllCategory } from '../../axios/category'
 import { getAllProducts, getProductForCategory } from '../../axios/products'
+import { useSelector } from 'react-redux'
 
 
 
-const variants = {
-    open: { left: 0 },
-    close: { left: '-15em' }
-}
+
 
 
 export const Products = () => {
-    const [isOpen, setOpen] = useState(false)
     const [isCategory, setIsCategory] = useState()
     const [isProducts, setIsProducts] = useState()
-    const btnCloseRef = useRef()
-    const btnOpenRef = useRef()
-
+    const products = useSelector(state => state.products)
+    
     const getCategoty = async () => {
         try {
             const { data } = await getAllCategory()
@@ -88,7 +84,7 @@ export const Products = () => {
             <ContainerProducts>
             {
                 isProducts ?
-                isProducts.map(product => <CardProduct key={isProducts.data?.id} {...product} />) :
+                isProducts.map(product => <CardProduct key={product.id} {...product} />) :
                 <p>Hubo un error</p>
             }
             </ContainerProducts>

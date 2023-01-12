@@ -29,25 +29,10 @@ export const User = () => {
 
     return (
         <UserContainer>
-            <label onClick={() => {
-                setOpen(!isOpen)
-            }} >
-                Hola {firstname}
-            </label>
-            <div className="menuContainer">
-                <MenuContainer
-                    animate={isOpen ? "open" : "close"}
-                    variants={variants}
-                    transition={{ duration: .3 }}
-                    onClick={() => {
-                        setOpen(!isOpen)
-                    }}
-                >
-                    <NavLink to='profile' > <li>Perfil</li> </NavLink>
-                    <NavLink to='/' > <li>Carrito</li> </NavLink>
-                    <li onClick={logOut}>Cerrar Sesión</li>
-                </MenuContainer>
-            </div>
+            <ul>
+                <NavLink to='profile' > <li>Perfil</li> </NavLink>
+                <li onClick={logOut}>Cerrar Sesión</li>
+            </ul>
         </UserContainer>
     )
 }
