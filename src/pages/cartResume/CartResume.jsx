@@ -13,13 +13,15 @@ export const CartResume = () => {
     const dateTime = new Date()
     const quantity = cart.products.length
     const totalPrice = cart.total
+    console.log(cart)
 
-    const checkOut = async (quantity, totalPrice) => {
+    const checkOut = async (quantity, totalPrice, products) => {
         if (!cart) {
             alert('El carrito esta vacio')
         }
+        console.log(products)
         try {
-            const created = await createResume(quantity, totalPrice)
+            const created = await createResume(quantity, totalPrice, products)
             console.log(created)
             return alert('Gracias por su compra')
         } catch (error) {

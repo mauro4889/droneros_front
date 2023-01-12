@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 
 export const CartContainer = styled.div`
-    
+
     button{
         color: #fff;
         background-color: rgba(34, 34, 34, .5);

@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 export const ProfileUpdateContainer = styled.div`
     width: 100%;
+    padding-top: 5em;
     h3{
         text-align: center;
         margin-top: 5%;

@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 export const AddProductContainer = styled.div`
     width: 100%;
+    padding-top: 5em;
     h2{
         margin-top: 2%;
         text-align: center;

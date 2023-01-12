@@ -16,11 +16,11 @@ function App() {
   }, [dispatch] )
 
   return (
-    <>
+    <div>
     <GlobalStyle/>
     <NavBar/>
     <Routes/>
-    </>
+    </div>
   );
 }
 

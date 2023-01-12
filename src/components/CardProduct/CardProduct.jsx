@@ -6,9 +6,9 @@ import { addProductToCart } from '../../redux/cart/cartActions'
 import { addToCart } from '../../redux/cart/cartReducer'
 
 
-export const CardProduct = ({name, description, price, img, id}) => {
+export const CardProduct = ({name, description, price, img, id, categoryId, stock}) => {
     const dispatch = useDispatch()
-    const product =[{id: id, name: name, description: description, price: price, img: img}]
+    const product =[{id: id, name: name, description: description, price: price, img: img, categoryId: categoryId, stock: stock}]
     
     return (
         <ContainerStyle>

@@ -5,10 +5,10 @@ import styled from "styled-components";
 export const NavStyle = styled.div`
     background-color: rgb(34, 34, 34);
     width: 100vw;
-    height: 5em;
+    height: 4.5em;
     display: grid;
     grid-template-columns: 2fr 8fr 1fr 1fr;
-    position: sticky;
+    position: fixed;
     align-items: center;
     @media (max-width: 767px){
         grid-template-columns: 3fr 6fr 1fr 2fr;
@@ -16,8 +16,7 @@ export const NavStyle = styled.div`
     @media (min-width: 1023px){
         align-items: start;
         padding-top: 2em;
-    }
-    @media (min-width: 1439px){
+        padding-bottom: 0;
         height: 6em;
     }
     .userButton{
@@ -30,33 +29,21 @@ export const NavStyle = styled.div`
         @media (min-width: 767px){
             margin-left: 1em;
         }
-        @media (min-width: 1023px){
-            margin-top: -0.5em;
-        }
     }
 `
 
 export const LogoStyle = styled.div`
     width: 100%;
-    height: 100%;
+    height: 50%;
     img{
         width: 60%;
-        height: 50%;
+        height: 100%;
         @media (max-width: 767px){
             width: 80%;
-            height: 80%;
         }
         @media (min-width: 767px){
             height: 74%;
-            width: 80%;
-        }
-        @media (min-width: 1023px){
-            height: 45%;
-            margin-top: -1em;
-        }        
-        @media (min-width: 1439px){
-            margin-top: -2em;
-            height: 35%;
+            
         }
     }
 `
@@ -78,6 +65,7 @@ export const NavButtonStyle = styled.div`
     @media (min-width: 767px){
         display: none;
     }
+    
 `
 
 export const NavMenuStyle = styled(motion.div)`
@@ -88,10 +76,8 @@ export const NavMenuStyle = styled(motion.div)`
     height: 60vh;
     background-color: rgba(34, 34, 34, .5);
     z-index: -100;
-    padding-top: 2em;
     ul{
         margin-left: 5%;
-        margin-top: 4em;
         a{
             text-decoration: none;
             color: #fff;
@@ -105,6 +91,7 @@ export const NavMenuStyle = styled(motion.div)`
         margin: 8% auto;
         font-weight: 300;
         letter-spacing: 5px;
+        cursor: pointer;
     }
 
     @media (max-width: 767px){
@@ -116,28 +103,17 @@ export const NavMenuStyle = styled(motion.div)`
         height: 100%;
         z-index: 10;
         opacity: 1 !important;
-        padding-top: 0;
         ul{
             display: flex;
             width: 100%;
             height: 100%;
             margin: 0;
             justify-content: space-around;
-            margin-top: -0.5em;
+            
         }
         li{
             margin: 0;
             height: 100%;
-        }
-    }
-    @media (min-width: 1023px){
-        ul{
-            margin-top: 0;
-        }
-    }
-    @media (min-width: 1439px){
-        ul{
-            padding-top: 0%;
         }
     }
 `

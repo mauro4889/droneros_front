@@ -4,6 +4,7 @@ import styled from "styled-components";
 
 export const ProductsContainerStyle = styled.div`
     height: 100vh;
+    padding-top: 4em;
     .portada{
         width: 100vw;
         height: 10em;

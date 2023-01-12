@@ -6,6 +6,7 @@ export const DetailProductContainer = styled.div`
     margin: 2% auto;
     display: grid;
     grid-template-columns: 1fr 2fr 2fr 2fr 2fr 2fr;
+    text-align: center;
     p{
         padding: auto;
         @media (min-width: 767px){
@@ -25,5 +26,9 @@ export const DetailProductContainer = styled.div`
         :focus{
             color: #000;
         }
+    }
+    .containerButtons{
+        display: flex;
+        justify-content: space-evenly;
     }
 `

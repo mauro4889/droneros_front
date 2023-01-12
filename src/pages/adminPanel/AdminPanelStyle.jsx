@@ -5,6 +5,7 @@ export const AdminPanelContainer = styled.div`
     width: 100%;
     font-family: 'Open Sans';
     text-align: center;
+    padding-top: 5em;
     h2{
         margin: 4% auto;
     }

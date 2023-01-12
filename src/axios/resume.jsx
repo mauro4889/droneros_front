@@ -3,6 +3,7 @@ import axios from "axios"
 const token = localStorage.getItem('token')
 
 export const createResume = async (quantity, totalPrice, products) =>{
+    
     try {
         const response = await axios({
             method: 'post',

@@ -24,7 +24,7 @@ export const CardProductResumeContainer = styled.div`
             margin-top: 1em;
             border-radius: 5px;
             @media (min-width: 767px){
-                width: 10%;
+                width: 20%;
                 height: 1.5em;
             }
         }

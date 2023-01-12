@@ -6,6 +6,7 @@ export const SearchProductContainer = styled.div`
     margin: 0;
     padding: 0;
     font-family: 'Open Sans';
+    padding-top: 5em;
     h3{
         text-align: center;
         margin-top: 6%;

@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 export const ListProductsContainer = styled.div`
     width: 100%;
+    padding-top: 5em;
     h2{
         text-align: center;
     }
@@ -19,6 +20,10 @@ export const ListProductsContainer = styled.div`
 export const ContainerProductsDetail = styled.div`
     width: 100%;
     text-align: center;
+    font-size: 10px;
+    @media (min-width: 1023px){
+        font-size: 15px;
+    }
     .header-details{
         width: 100%;
         margin: auto;
