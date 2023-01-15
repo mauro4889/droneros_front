@@ -29,9 +29,6 @@ export const SlideStyle = styled.div`
     @media (max-width: 766px){
         background-size: 100% 100%;
     }
-    @media (min-width: 767px){
-        background-size: 100% 100%;
-    }
     @media (min-width: 1023px){
         height: 400px;
     }
