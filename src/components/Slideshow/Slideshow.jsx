@@ -1,12 +1,12 @@
 import { useEffect, useRef, useState } from 'react'
 import { SlideDotsStyle, SlideDotStyle, SliderStyle, SlideshowStyle, SlideStyle } from './SlideStyle';
-import img1 from '../../assets/img/slideshow/img1.jpg'
-import img2 from '../../assets/img/slideshow/img2.jpg'
+import fpv from '../../assets/img/slideshow/fpv.jpg'
+import accesorios from '../../assets/img/slideshow/accesorios.jpg'
 import img3 from '../../assets/img/slideshow/img3.jpg'
 import image from '../../assets/img/slideshow/image.jpg'
 
 
-const img = [image, img2, img3];
+const img = [image, fpv, accesorios];
 const delay = 2500;
 
 export const Slideshow = () => {

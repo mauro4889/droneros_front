@@ -5,7 +5,7 @@ const token = localStorage.getItem('token')
 export const createUser = async(data) => {
     
     try {
-        const response = await axios.post('http://localhost:3002/auth/register', {data})
+        const response = await axios.post('https://dronerosback-production.up.railway.app/auth/register', {data})
         return response
     } catch (error) {
         console.log(error)
@@ -15,7 +15,7 @@ export const createUser = async(data) => {
 
 export const loginUser = async(email, password) => {
     try {
-        const response = await axios.post('http://localhost:3002/auth/login', {
+        const response = await axios.post('https://dronerosback-production.up.railway.app/auth/login', {
             email,
             password
         })
@@ -31,7 +31,7 @@ export const updateUser = async(data) =>{
     try {
         const response = await axios({
             method: 'patch',
-            url: `http://localhost:3002/user/update`,
+            url: `https://dronerosback-production.up.railway.app/user/update`,
             data: data,
             headers: {
                 authorization: "Bearer " + token?.replace(/['"]+/g, '')

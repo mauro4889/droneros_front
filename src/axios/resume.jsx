@@ -7,7 +7,7 @@ export const createResume = async (quantity, totalPrice, products) =>{
     try {
         const response = await axios({
             method: 'post',
-            url: 'http://localhost:3002/resume/',
+            url: 'https://dronerosback-production.up.railway.app/resume/',
             data: {
                 quantity,
                 totalPrice,
@@ -28,7 +28,7 @@ export const getAllResume = async () =>{
     try {
         const response = await axios({
             method: 'get',
-            url: 'http://localhost:3002/resume/',
+            url: 'https://dronerosback-production.up.railway.app/resume/',
             headers: {
                 authorization: "Bearer " + token?.replace(/['"]+/g, '')
             }

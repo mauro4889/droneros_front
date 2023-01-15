@@ -61,7 +61,6 @@ export const NavBar = () => {
                 <ul onClick={() => setOpen(false)}>
                     <NavLink to='/' className='links'><li>Inicio</li></NavLink>
                     <NavLink to='products' className='links'><li>Productos</li></NavLink>
-                    <li>Nosotros</li>
                     <li>
                         {
                             isUser ?

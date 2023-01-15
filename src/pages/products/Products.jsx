@@ -16,7 +16,7 @@ import { useSelector } from 'react-redux'
 export const Products = () => {
     const [isCategory, setIsCategory] = useState()
     const [isProducts, setIsProducts] = useState()
-    const products = useSelector(state => state.products)
+    
 
     const getCategoty = async () => {
         try {
@@ -62,15 +62,6 @@ export const Products = () => {
             <img src={portada} alt="Portada" className='portada' />
             <h2>Nuestros Productos</h2>
             <ContainerFilter>
-                <form>
-                    <label>Ordenar por</label>
-                    <select name="" id="">
-                        <option value="Mayor">Mayor precio</option>
-                        <option value="Menor">Menor precio</option>
-                        <option value="Nuevo">Mas nuevo</option>
-                        <option value="Viejo">Menos nuevo</option>
-                    </select>
-                </form>
                 <select onChange={(e)=> getProductByCategory(e.target.value)} >
                     <option value="" selected>---</option>
                     {isCategory?.map(e => (

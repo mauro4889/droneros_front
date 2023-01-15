@@ -9,7 +9,6 @@ export const AdminPanel = () => {
             <p>Aquí podra realizar distintas acciones de los productos</p>
             <div className="container-options">
                 <NavLink to='listproducts' ><button>Listar productos</button></NavLink>
-                <NavLink to='searchproducts' ><button>Buscar producto</button></NavLink>
                 <NavLink to='addproduct' ><button>Agregar producto</button></NavLink>
                 <NavLink to='category' ><button>Categorias</button></NavLink>
             </div>

@@ -53,10 +53,6 @@ export const Login = () => {
                 <input type="password" {...register('password', {required: true})} />
 
                 <button type='submit'>Ingresar</button>
-                <p>O puedes ingresar con...</p>
-                <div className="alternate_login">
-                    <button><img src={google} alt="Google" /></button>
-                </div>
                 <div className='register'>
                     <p>¿No tienes usuario? <NavLink className={'link'} to='/createacount'>Registrarse</NavLink></p>
                 </div>

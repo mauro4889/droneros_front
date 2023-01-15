@@ -119,4 +119,7 @@ export const NavMenuStyle = styled(motion.div)`
             height: 100%;
         }
     }
+    @media (min-width: 1439px){
+        padding-top: 1em;
+    }
 `
