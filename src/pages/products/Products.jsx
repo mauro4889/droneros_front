@@ -21,6 +21,7 @@ export const Products = () => {
     const getCategoty = async () => {
         try {
             const { data } = await getAllCategory()
+            console.log(data)
             setIsCategory(data.data)
         } catch (error) {
             console.log(error)
