@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 export const CreateAcountContainer = styled.div`
     width: 100vw;
+    padding-top: 5em;
     h3{
         letter-spacing: 2px;
         text-align: center;

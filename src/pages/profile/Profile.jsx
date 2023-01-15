@@ -16,7 +16,7 @@ export const Profile = () => {
             <h3>Panel de usuario</h3>
             <form action="">
                 <button onClick={()=> navigate('update')} >Modificar datos</button> 
-                <button>Ver resumen de compras</button>
+                <button onClick={()=> navigate('resume')} >Ver resumen de compras</button>
                 {
                     role == 'ADMIN' ?
                     <button onClick={()=> navigate('/admin/panel')} >Panel administrador</button>

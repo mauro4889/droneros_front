@@ -20,8 +20,13 @@ export const Login = () => {
         const {email, password} = values
         
         try {
-            const loged = await loginUser(email, password)
-            localStorage.removeItem('token')
+            const loged = await loginUser(email.toLowerCase(), password)
+
+            if(!loged.data.data.validated){
+                return alert ('Email no validado')
+            }
+    
+            localStorage.removeItem('token')            
             localStorage.setItem('token', JSON.stringify(loged.data.token))
             localStorage.setItem('user', JSON.stringify(loged.data.data))
             dispatch(login())

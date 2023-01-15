@@ -6,6 +6,8 @@ import { useState, useEffect } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
 import { User } from '../User/User'
 import { Cart } from '../Cart/Cart'
+import { useDispatch } from 'react-redux'
+import { cleanCart } from '../../redux/cart/cartReducer'
 
 
 
@@ -28,6 +30,7 @@ export const NavBar = () => {
     const [isOpen, setOpen] = useState(false)
     const [isUser, setIsUser] = useState('')
     const navigate = useNavigate()
+    const dispatch = useDispatch()
 
     useEffect(() => {
         const data = JSON.parse(localStorage.getItem('user'))
@@ -36,6 +39,7 @@ export const NavBar = () => {
 
     const logOut = () => {
         localStorage.setItem('user', JSON.stringify(''))
+        dispatch(cleanCart())
         window.location.reload()
     }
 

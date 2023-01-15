@@ -17,7 +17,7 @@ export const Products = () => {
     const [isCategory, setIsCategory] = useState()
     const [isProducts, setIsProducts] = useState()
     const products = useSelector(state => state.products)
-    console.log(isProducts)
+
     const getCategoty = async () => {
         try {
             const { data } = await getAllCategory()

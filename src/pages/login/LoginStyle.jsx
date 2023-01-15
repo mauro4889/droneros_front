@@ -5,6 +5,7 @@ export const LoginContainer = styled.div`
     width: 100vw;
     display: flex;
     flex-direction: column;
+    padding-top: 5em;
     h2{
         text-align: center;
         margin-top: 1em;
@@ -104,6 +105,7 @@ export const FormStyle = styled.form`
 
 export const ContainerAnimated = styled.div`
     position: absolute;
+    margin-top: 2em;
     .drone_container{
         img{
             margin-top: 2em;

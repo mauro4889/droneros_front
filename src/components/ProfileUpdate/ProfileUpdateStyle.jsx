@@ -7,12 +7,17 @@ export const ProfileUpdateContainer = styled.div`
     h3{
         text-align: center;
         margin-top: 5%;
-        font-weight: 200;
+        font-weight: bold;
         font-family: 'Open-Sans';
         @media (min-width: 1439px){
             margin-top: 2%;
             font-size: 30px;
         }
+    }
+    p{
+        text-align: center;
+        margin-top: 1em;
+        font-weight: lighter;
     }
     form{
         display: flex;

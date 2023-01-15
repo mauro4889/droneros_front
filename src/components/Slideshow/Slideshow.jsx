@@ -3,9 +3,10 @@ import { SlideDotsStyle, SlideDotStyle, SliderStyle, SlideshowStyle, SlideStyle 
 import img1 from '../../assets/img/slideshow/img1.jpg'
 import img2 from '../../assets/img/slideshow/img2.jpg'
 import img3 from '../../assets/img/slideshow/img3.jpg'
+import image from '../../assets/img/slideshow/image.jpg'
 
 
-const img = [img1, img2, img3];
+const img = [image, img2, img3];
 const delay = 2500;
 
 export const Slideshow = () => {

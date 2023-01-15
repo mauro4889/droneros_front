@@ -51,8 +51,20 @@ export const CartResumeContainer = styled.div`
     .infoContainer{
         display: flex;
             label{
-                font-weight: bold;
+                font-weight: bolder;
                 margin-left: 4%;
+            }
+            span{
+                font-weight: bold;
+            }
+            a{
+                margin-left: 1em;
+            }
+            .dataContainer{
+                margin-left: 1em;
+                p{
+                    margin-top: 2%;
+                }
             }
         }
     .productsInfo{

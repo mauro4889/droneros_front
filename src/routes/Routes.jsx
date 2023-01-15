@@ -5,6 +5,7 @@ import { Routes as ReactDomRoutes, Route, Navigate } from 'react-router-dom'
 import { AddCategory } from '../components/AddCategory/AddCategory'
 import { ListCategory } from '../components/ListCategory/ListCategory'
 import { ProfileUpdate } from '../components/ProfileUpdate/ProfileUpdate'
+import { Resume } from '../components/Resume/Resume'
 import { SearchProducts } from '../components/SearchProducts/SearchProducts'
 import { UpdateCategory } from '../components/UpdateCategory/UpdateCategory'
 import { UpdateProduct } from '../components/UpdateProduct/UpdateProduct'
@@ -51,6 +52,7 @@ export const Routes = () => {
             <Route path='admin/panel/category/update' element={isLoged ? <UpdateCategory /> : (<Navigate to="/login" />)}/>
             <Route path='profile' element={isLoged ? <Profile /> : (<Navigate to="/login" />)} />
             <Route path='profile/update' element={isLoged ? <ProfileUpdate /> : (<Navigate to="/login" />)} />
+            <Route path='profile/resume' element={isLoged ? <Resume /> : (<Navigate to="/login" />)} />
             <Route path='cartresume' element={isLoged ? <CartResume/> : (<Navigate to="/login" />) } />
         </ReactDomRoutes>
     )

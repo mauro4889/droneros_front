@@ -19,6 +19,9 @@ export const NavStyle = styled.div`
         padding-bottom: 0;
         height: 6em;
     }
+    @media (min-width: 1439px){
+        height: 7em;
+    }
     .userButton{
         width: 25%;
         height: 20%;
