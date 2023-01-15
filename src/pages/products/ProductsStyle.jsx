@@ -128,4 +128,8 @@ export const ContainerProducts = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    @media (min-width: 1023px){
+        display: grid;
+        grid-template-columns: 4fr 4fr 4fr;
+    }
 `
