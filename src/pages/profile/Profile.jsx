@@ -21,7 +21,7 @@ export const Profile = () => {
                     role == 'ADMIN' ?
                     <button onClick={()=> navigate('/admin/panel')} >Panel administrador</button>
                     :
-                    <button onClick={logOut} >Cerrar Sesión</button>
+                    <button onClick={()=>logOut()} >Cerrar Sesión</button>
                 }
             </form>
         </ProfileContainer>

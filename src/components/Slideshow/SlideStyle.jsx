@@ -6,6 +6,9 @@ export const SlideshowStyle = styled.div`
     width: 100vw;
     height: 17em;
     z-index: -110;
+    @media (min-width: 767px){
+        height: 22em;
+    }
     @media (min-width: 1023px){
         height: 30em;
     }
@@ -27,7 +30,7 @@ export const SlideStyle = styled.div`
     background-repeat: no-repeat;
     background-position: center;
     @media (max-width: 766px){
-        background-size: 100% 100%;
+        background-size: cover;
     }
     @media (min-width: 1023px){
         height: 400px;
