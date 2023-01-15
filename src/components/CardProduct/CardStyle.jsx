@@ -52,6 +52,7 @@ export const ContainerStyle = styled.div`
         }
     }
     @media (min-width: 1023px){
+        width: 100%;
         height: 32em;
         img{
             height: 22em;
