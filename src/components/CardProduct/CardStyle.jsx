@@ -64,9 +64,6 @@ export const ContainerStyle = styled.div`
     }
     @media (min-width: 1439px){
         height: 34em;
-        img{
-            width: 100%;
-        }
         .price{
             font-size: 20px;
         }
