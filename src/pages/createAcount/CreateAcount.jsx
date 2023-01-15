@@ -24,7 +24,7 @@ export const CreateAcount = () => {
             }
             
             if(newUser.data.success){
-                alert('Su cuenta se creo exitosamente')
+                alert('Su cuenta se creo exitosamente. Se envio un correo para validar la cuenta')
                 navigate('/login')
             }
             
