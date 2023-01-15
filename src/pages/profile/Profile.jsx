@@ -1,13 +1,18 @@
+import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import { cleanCart } from '../../redux/cart/cartReducer'
 import { ProfileContainer } from './ProfileStyle'
 
 export const Profile = () => {
     const navigate = useNavigate()
+    const dispatch = useDispatch()
 
     const {role} = JSON.parse(localStorage.getItem('user'))
     
     const logOut = () => {
         localStorage.setItem('user', JSON.stringify(''))
+        dispatch(cleanCart())
+        window.location.reload()
         navigate('/')
     }
 
