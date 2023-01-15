@@ -27,7 +27,7 @@ export const SlideStyle = styled.div`
     background-repeat: no-repeat;
     background-position: center;
     @media (max-width: 766px){
-        background-size: 97% 100%;
+        background-size: 100% 100%;
     }
     @media (min-width: 767px){
         background-size: 100% 100%;
