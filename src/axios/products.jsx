@@ -96,7 +96,7 @@ export const getProductForCategory = async (id) =>{
     try {
         const response = await axios({
             method: 'get',
-            url: `https://dronerosback-production.up.railway.app/filter/${id}`,
+            url: `https://dronerosback-production.up.railway.app/products/filter/${id}`,
         })
         return response.data.data.products
     } catch (error) {
