@@ -20,7 +20,7 @@ export const CardProduct = ({name, description, price, img, id, categoryId, stoc
                 {description}
             </p>
             <p className='price'>
-                {price}
+                ${price}
             </p>
             <button onClick={()=> dispatch(addToCart(...product))} >
                 COMPRAR
